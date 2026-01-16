@@ -1,0 +1,41 @@
+body {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    font-family: var(--font-regular);
+}
+
+.text-white {
+    color: var(--color-white);
+}
+
+.text-black {
+    color: var(--color-black);
+}
+
+.text-blue {
+    color: var(--color-blue);
+}
+
+.text-terra {
+    color: var(--color-terra);
+}
+
+.border-peach {
+    border-color: var(--color-peach);
+}
+
+.bg-terra {
+    background-color: var(--color-terra);
+}
+
+.bg-blue {
+    background-color: var(--color-blue);
+}
+
+.bg-white {
+    background-color: var(--color-white);
+}
+
+.headline {
+    font-family: var(--font-headline);
+}

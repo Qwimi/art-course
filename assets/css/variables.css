@@ -1,0 +1,18 @@
+:root {
+    --color-black: #000;
+    --color-white: #fff;
+
+    --color-blue: #4F7290;
+    --color-peach: #FFD6B6;
+    --color-terra: #D68C67;
+
+    --color-orange-gradient-start: #FE8B32;
+    --color-orange-gradient-end: #DA785D;
+
+    --gradient-orange: linear-gradient(90deg, var(--color-orange-gradient-start), var(--color-orange-gradient-end));
+
+    --font-regular: "PTSans-Regular", sans-serif;
+    --font-bold: "PTSans-Bold", sans-serif;
+    --font-italic: "PTSans-Italic", sans-serif;
+    --font-headline: "BERNIERDISTRESSED", sans-serif;
+}
