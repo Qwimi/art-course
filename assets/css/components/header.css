@@ -1,0 +1,17 @@
+.navbar {
+    .navbar-brand {
+        height: 50px;
+    }
+
+    .site-nav {
+        gap: 50px;
+    }
+
+    .nav-link {
+        padding: 0;
+    }
+
+    .image-link {
+        height: 24px;
+    }
+}
