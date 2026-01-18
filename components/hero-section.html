@@ -1,0 +1,55 @@
+<div class="hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 hero-text d-flex flex-column">
+                <h1 class="headline">Петербург <br> сквозь года</h1>
+                <h4 class="headline text-blue hero-subtitle">с Владимиром Заруцким</h4>
+
+                <ul class="hero-list">
+                    <li>
+                        Нарисуйте <span class="text-blue">12 пейзажей:</span> от ретро Петербурга до сегодняшних дней
+                    </li>
+                    <li>
+                        Изучите <span class="text-blue">способы передачи особенностей архитектуры</span> с помощью
+                        акварели
+                    </li>
+                    <li>
+                        Научитесь передавать <span class="text-blue">художественные образы и замыслы</span>
+                    </li>
+                </ul>
+
+                <button class="btn hero-button w-75" type="button">
+                    узнать подробности
+                </button>
+            </div>
+
+            <div class="col-6 position-relative">
+                <img src="assets/images/hero/hero-illustration.png" alt="Иллюстрация герой-блока"
+                    class="hero-illustration">
+            </div>
+        </div>
+
+        <div class="row hero-cards-container"></div>
+    </div>
+</div>
+
+<script>
+    $.getJSON('assets/data/hero-cards.json', function (cards) {
+        const container = $('.hero-cards-container');
+        cards.forEach(card => {
+            const cardHtml = `
+            <div class="col-3">
+                <div class="hero-card border-peach">
+                    <img src="assets/images/hero/bg-card.png" alt="" class="hero-card-background">
+                    <div class="hero-card-content">
+                        <p class="m-0">
+                            <span class="text-blue">${card.title}:</span> ${card.value}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        `;
+            container.append(cardHtml);
+        });
+    });
+</script>
