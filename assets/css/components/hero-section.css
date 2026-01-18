@@ -1,0 +1,51 @@
+.hero-section {
+    padding-block: 40px;
+    background: url(../../images/hero/bg-hero.jpg) no-repeat center / cover;
+
+    .hero-text-block {
+        margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+        font-size: 30px;
+        font-weight: bold;
+        text-transform: lowercase;
+        margin-bottom: 20px;
+    }
+
+    .hero-list {
+        margin-bottom: 20px;
+    }
+
+    .hero-button {
+        margin-bottom: 52px;
+    }
+
+    .hero-illustration {
+        position: absolute;
+        height: 100%;
+    }
+
+    .hero-cards-container {
+        margin-bottom: -80px;
+    }
+
+    .hero-card {
+        position: relative;
+    }
+
+    .hero-card-background {
+        height: auto;
+        width: 100%;
+    }
+
+    .hero-card-content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        text-align: center;
+    }
+}
