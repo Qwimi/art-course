@@ -1,0 +1,16 @@
+.about-block {
+    padding-block: 100px;
+
+    .about-title {
+        margin-bottom: 30px;
+    }
+
+    .about-info {
+        margin-bottom: 100px;
+    }
+
+    .about-info-text {
+        padding: 50px 18px 50px 50px;
+        background: url(../../images/about/about-bg.jpg) no-repeat center / cover;
+    }
+}
