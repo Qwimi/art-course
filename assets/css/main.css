@@ -1,7 +1,22 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--color-white);
     color: var(--color-black);
     font-family: var(--font-regular);
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+img {
+    height: 100%;
+    width: auto;
 }
 
 .text-white {
