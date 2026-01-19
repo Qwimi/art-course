@@ -15,10 +15,4 @@
     --font-bold: "PTSans-Bold", sans-serif;
     --font-italic: "PTSans-Italic", sans-serif;
     --font-headline: "BERNIERDISTRESSED", sans-serif;
-
-    /* брейкпоинты для адаптива */
-    --bs-breakpoint-sm: 576px;
-    --bs-breakpoint-md: 768px;
-    --bs-breakpoint-lg: 992px;
-    --bs-breakpoint-xl: 1200px;
 }
