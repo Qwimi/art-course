@@ -20,7 +20,7 @@
         </div>
 
         <h2 class="headline text-center course-materials">Материалы на курс</h2>
-        <div class="row course-material-list"></div>
+        <div class="row course-material-list justify-content-center"></div>
 
         <hr class="border-peach about-division">
         <p class="text-center">Всё это рекомендации, не обязательно использовать то же самое!</p>
@@ -65,23 +65,38 @@
             container.append(cardHtml);
         });
 
-        $('.material-dropdown').each(function () {
-            const $dropdown = $(this);
+        // Рассчет padding-top и ширины для тела dropdown
+        function initDropdown($dropdown) {
             const $btn = $dropdown.find('.material-dropdown-btn');
             const $wrapper = $dropdown.find('.material-dropdown-wrapper');
             const $list = $wrapper.find('.material-dropdown-list');
 
-            // добавляем padding-top, чтобы список не заезжал на кнопку
+            $wrapper.css('display', 'block');
+
+            // Отступ сверху
             const paddingTop = -$btn.position().top + $btn.outerHeight() + 40;
 
-            // ширина wrapper по контенту + padding + border
+            // Ширина
             const paddingInline = parseFloat($wrapper.css('padding-left')) + parseFloat($wrapper.css('padding-right'));
             const borderWidth = parseFloat($wrapper.css('border-left-width')) + parseFloat($wrapper.css('border-right-width'));
             const totalExtra = paddingInline + borderWidth;
             const contentWidth = $list[0].scrollWidth + totalExtra;
 
-            // Устанавливаем стили: отступ сверху, ширину и скрываем элемент
-            $wrapper.css({ width: contentWidth, display: 'none', paddingTop });
+            const maxWidth = $(window).width() * 0.9;
+            const finalWidth = Math.min(contentWidth, maxWidth);
+
+            $wrapper.css({
+                width: finalWidth,
+                paddingTop
+            });
+        }
+
+        $('.material-dropdown').each(function () {
+            const $dropdown = $(this);
+            const $wrapper = $dropdown.find('.material-dropdown-wrapper');
+            initDropdown($dropdown);
+            $wrapper.css('display', 'none');
+            $wrapper.data('dropdown', $dropdown);
         });
 
         // Обработка клика по кнопке
@@ -94,6 +109,24 @@
             // Обновляем aria-expanded
             const expanded = $(this).attr('aria-expanded') === 'true';
             $(this).attr('aria-expanded', !expanded);
+        });
+
+        // Обновляем ширину и отступы при изменении размера окна
+        let resizeTimeout;
+        $(window).on('resize', function () {
+            clearTimeout(resizeTimeout);
+
+            // Дебаунс - обновляем через 100ms после окончания ресайза
+            resizeTimeout = setTimeout(function () {
+                $('.material-dropdown').each(function () {
+                    const $dropdown = $(this);
+                    const $wrapper = $dropdown.find('.material-dropdown-wrapper');
+
+                    if ($wrapper.css('display') !== 'none') {
+                        initDropdown($dropdown);
+                    }
+                });
+            }, 500);
         });
     });
 </script>
