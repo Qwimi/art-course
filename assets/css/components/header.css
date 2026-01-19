@@ -6,7 +6,7 @@
     }
 
     .site-nav {
-        gap: 50px;
+        gap: 8px;
     }
 
 
@@ -20,6 +20,12 @@
     }
 
     .image-link {
-        height: 24px;
+        height: 28px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .navbar .site-nav {
+        gap: 50px;
     }
 }
