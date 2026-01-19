@@ -2,13 +2,12 @@
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
 
     .navbar-brand {
-        height: 50px;
+        height: 3.125rem;
     }
 
     .site-nav {
-        gap: 50px;
+        gap: 0.5rem;
     }
-
 
     img {
         height: 100%;
@@ -20,6 +19,12 @@
     }
 
     .image-link {
-        height: 24px;
+        height: 1.75rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .navbar .site-nav {
+        gap: 3.125rem;
     }
 }
