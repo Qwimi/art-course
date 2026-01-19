@@ -26,7 +26,6 @@
         position: relative;
         z-index: 1;
         background-color: #EDFBFE;
-        color: var(--color-blue);
         border: 1px solid var(--color-blue);
         outline: none;
         text-transform: uppercase;

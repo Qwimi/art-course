@@ -1,0 +1,74 @@
+<div class="course-registration">
+    <div class="container">
+        <h2 class="headline text-center registration-title">Тарифы</h2>
+        <div class="row pricing-cards"></div>
+    </div>
+</div>
+
+<script>
+    const EXCHANGE_RATE = 70;
+
+    function formatPrice(price, currency) {
+        const value = Number(String(price).replace(/\s/g, ''));
+
+        if (currency === 'rub') {
+            return value.toLocaleString('ru-RU') + ' ₽';
+        }
+
+        const usd = Math.round(value / EXCHANGE_RATE);
+        return '$' + usd.toLocaleString('en-US');
+    }
+
+    $.getJSON('assets/data/course-registration.json', function (cards) {
+        const $container = $('.pricing-cards');
+
+        cards.forEach(card => {
+            const listItems = card.list.map(({ text, className }) => (
+                `<li class="avantage-item ${className}">${text}</li>`
+            )).join('');
+
+            const $card = $(`
+                <div class="col-4">
+                    <div class="bg-white pricing-card">
+                        <h5 class="pricing-card-title bg-blue headline text-white text-center">
+                            ${card.title}
+                        </h5>
+                        <img src="${card.image}" class="card-img" alt="${card.title}">
+                        <div class="card-body">
+                            <ul class="avantages-list mb-4">${listItems}</ul>
+                            <p class="old-price text-center text-blue text-crossed mb-3">
+                                ${formatPrice(card.oldPrice, 'rub')}
+                            </p>
+                            <p class="new-price text-center text-blue mb-4">
+                                ${formatPrice(card.newPrice, 'rub')}
+                            </p>
+                            <div class="currency-switch mb-4 text-center">
+                                <button class="currency-btn text-white active" data-currency="rub">₽</button>
+                                <button class="currency-btn text-white" data-currency="usd">$</button>
+                            </div>
+                            <button class="btn w-100 mb-4">Принять участие</button>
+                        </div>
+                    </div>
+                </div>
+            `).data('card', card);
+
+            $container.append($card);
+        });
+        $('.currency-btn').on('click', function () {
+            const $btn = $(this);
+            const $card = $btn.closest('.pricing-card');
+            const currency = $btn.data('currency');
+
+            $btn.siblings().removeClass('active');
+            $btn.addClass('active');
+
+            const cardData = $card.closest('.col-4').data('card');
+
+            $card.find('.old-price')
+                .text(formatPrice(cardData.oldPrice, currency));
+
+            $card.find('.new-price')
+                .text(formatPrice(cardData.newPrice, currency));
+        });
+    });
+</script>
