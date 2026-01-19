@@ -1,21 +1,22 @@
 .about-block {
-    padding-block: 100px;
+    padding-block: 6.25rem;
 
     .about-title {
-        margin-bottom: 30px;
+        margin-bottom: 1.875rem;
     }
 
     .about-info {
-        margin-bottom: 100px;
+        margin-bottom: 6.25rem;
     }
 
     .about-info-text {
-        padding: 50px 18px 50px 50px;
+        padding: 3.125rem;
+        border-bottom: 0;
         background: url(../../images/about/about-bg.jpg) no-repeat center / cover;
     }
 
     .course-materials {
-        margin-bottom: 80px;
+        margin-bottom: 5rem;
     }
 
     .material-dropdown {
@@ -24,23 +25,23 @@
 
     .material-dropdown-btn {
         position: relative;
-        z-index: 1;
+        z-index: 2;
         background-color: #EDFBFE;
         border: 1px solid var(--color-blue);
         outline: none;
         text-transform: uppercase;
-        padding: 8px 24px;
-        border-radius: 20px;
+        padding: 0.5rem 1.5rem;
+        border-radius: 1.25rem;
     }
 
     .material-dropdown-wrapper {
         position: absolute;
         border: 1px solid var(--color-blue);
         top: -16px;
-        left: -24px;
-        padding: 20px;
-        border-radius: 20px;
-        z-index: 0;
+        left: -1.5rem;
+        padding: 1.25rem;
+        border-radius: 1.25rem;
+        z-index: 1;
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
     }
 
@@ -48,21 +49,32 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        max-height: 260px;
-        row-gap: 12px;
-        column-gap: 24px;
+        row-gap: 0.75rem;
+        column-gap: 1.5rem;
     }
 
     .material-item {
         text-align: start;
-        max-width: 160px;
+        max-width: 10rem;
     }
 
     .material-illustration {
-        height: 80px;
+        height: 5rem;
     }
 
     .about-division {
-        margin-bottom: 20px;
+        margin-bottom: 1.25rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .material-dropdown-list {
+        max-height: 16.25rem;
+    }
+
+    .about-info-text {
+        padding-right: 1.125rem;
+        border-right: 0;
+        border-bottom: 0.25rem solid var(--color-peach) !important;
     }
 }
