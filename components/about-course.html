@@ -73,14 +73,15 @@
 
             // добавляем padding-top, чтобы список не заезжал на кнопку
             const paddingTop = -$btn.position().top + $btn.outerHeight() + 40;
-            $wrapper.css('padding-top', paddingTop);
 
             // ширина wrapper по контенту + padding + border
             const paddingInline = parseFloat($wrapper.css('padding-left')) + parseFloat($wrapper.css('padding-right'));
             const borderWidth = parseFloat($wrapper.css('border-left-width')) + parseFloat($wrapper.css('border-right-width'));
             const totalExtra = paddingInline + borderWidth;
             const contentWidth = $list[0].scrollWidth + totalExtra;
-            $wrapper.css({ width: contentWidth + 'px' });
+
+            // Устанавливаем стили: отступ сверху, ширину и скрываем элемент
+            $wrapper.css({ width: contentWidth, display: 'none', paddingTop });
         });
 
         // Обработка клика по кнопке
