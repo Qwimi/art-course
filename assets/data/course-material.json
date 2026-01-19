@@ -1,0 +1,33 @@
+[
+    {
+        "image": "assets/images/about/material-card-1.png",
+        "title": "Краски",
+        "dropdown-title": "Список красок",
+        "dropdown-list": [
+            "Кобальт лазурно-голубой",
+            "Горизонт синий",
+            "Кобальт бирюзовый",
+            "Церулеум",
+            "Сиена натуральная",
+            "Охра красная",
+            "Сиена жженая",
+            "Пиррол оранжевый",
+            "Кадмий красный светлый",
+            "Опера",
+            "Кобальт"
+        ]
+    },
+    {
+        "image": "assets/images/about/material-card-2.png",
+        "title": "Кисти"
+    },
+    {
+        "image": "assets/images/about/material-card-3.png",
+        "title": "Бумага",
+        "description": "300гр/м, хлопок Saunders Waterford, Палаццо"
+    },
+    {
+        "image": "assets/images/about/material-card-2.png",
+        "title": "Карандаш 2В, 3В"
+    }
+]
