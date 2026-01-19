@@ -13,4 +13,57 @@
         padding: 50px 18px 50px 50px;
         background: url(../../images/about/about-bg.jpg) no-repeat center / cover;
     }
+
+    .course-materials {
+        margin-bottom: 80px;
+    }
+
+    .material-dropdown {
+        position: relative;
+    }
+
+    .material-dropdown-btn {
+        position: relative;
+        z-index: 1;
+        background-color: #EDFBFE;
+        color: var(--color-blue);
+        border: 1px solid var(--color-blue);
+        outline: none;
+        text-transform: uppercase;
+        padding: 8px 24px;
+        border-radius: 20px;
+    }
+
+    .material-dropdown-wrapper {
+        position: absolute;
+        border: 1px solid var(--color-blue);
+        top: -16px;
+        left: -24px;
+        padding: 20px;
+        border-radius: 20px;
+        z-index: 0;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+    }
+
+    .material-dropdown-list {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        max-height: 260px;
+        row-gap: 12px;
+        column-gap: 24px;
+    }
+
+    .material-item {
+        text-align: start;
+        max-width: 160px;
+    }
+
+    .material-illustration {
+        height: 80px;
+    }
+
+    .about-division {
+        margin-bottom: 20px;
+    }
 }

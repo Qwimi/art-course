@@ -18,6 +18,14 @@ li::marker {
     color: var(--color-orange-gradient-start);
 }
 
+ul {
+    padding-inline-start: 20px;
+}
+
+button {
+    cursor: pointer;
+}
+
 /* Оригинальная ширина контейнера - слишком большая */
 @media (min-width: 1200px) {
     .container {
