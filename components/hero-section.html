@@ -1,7 +1,7 @@
 <div class="hero-section">
     <div class="container">
         <div class="row">
-            <div class="col-6 hero-text d-flex flex-column">
+            <div class="col-md-8 col-lg-6 hero-text d-flex flex-column">
                 <h1 class="headline">Петербург <br> сквозь года</h1>
                 <h4 class="headline text-blue hero-subtitle">с Владимиром Заруцким</h4>
 
@@ -25,13 +25,13 @@
                 </a>
             </div>
 
-            <div class="col-6 position-relative">
+            <div class="col-md-4 col-lg-6 position-relative">
                 <img src="assets/images/hero/hero-illustration.png" alt="Иллюстрация герой-блока"
                     class="hero-illustration">
             </div>
         </div>
 
-        <div class="row hero-cards-container"></div>
+        <div class="row hero-cards-container justify-content-center"></div>
     </div>
 </div>
 
@@ -40,7 +40,7 @@
         const container = $('.hero-cards-container');
         cards.forEach(card => {
             const cardHtml = `
-            <div class="col-3">
+            <div class="col-6 col-sm-4 col-md-3">
                 <div class="hero-card border-peach">
                     <img src="assets/images/hero/bg-card.png" alt="" class="hero-card-background">
                     <div class="hero-card-content">
