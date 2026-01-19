@@ -28,7 +28,7 @@
             )).join('');
 
             const $card = $(`
-                <div class="col-4">
+                <div class="col col-12 col-md-4">
                     <div class="bg-white pricing-card">
                         <h5 class="pricing-card-title bg-blue headline text-white text-center">
                             ${card.title}
@@ -62,7 +62,7 @@
             $btn.siblings().removeClass('active');
             $btn.addClass('active');
 
-            const cardData = $card.closest('.col-4').data('card');
+            const cardData = $card.closest('.col').data('card');
 
             $card.find('.old-price')
                 .text(formatPrice(cardData.oldPrice, currency));

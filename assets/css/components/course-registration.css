@@ -2,6 +2,10 @@
     padding-block: 6.25rem;
     background: url(../../images/course-registration/reg-bg.jpg) no-repeat center / cover;
 
+    .pricing-cards {
+        row-gap: 1rem;
+    }
+
     .registration-title {
         margin-bottom: 5rem;
     }
