@@ -1,0 +1,55 @@
+<div class="container faq-block">
+    <h2 class="headline text-center">Частые вопросы</h2>
+    <div class="row justify-content-center">
+        <div class="faq-list col-8 d-flex flex-column"></div>
+    </div>
+</div>
+
+<script>
+    $.getJSON('assets/data/faq.json', function (faq) {
+        const $container = $('.faq-list');
+
+        faq.forEach(item => {
+            const $faqItem = $(`
+                <div class="faq-item py-4 px-5 border-peach">
+                    <div class="faq-summary d-flex justify-content-between align-items-center">
+                        <span>
+                            ${item.summary}
+                        </span>
+                        <span class="faq-icon d-flex align-items-center">
+                        </span>
+                    </div>
+                    <div class="faq-content mt-4" style="display: none;">
+                        ${item.content.map(paragraph => `<p>${paragraph}</p>`).join('')}
+                    </div>
+                </div>
+            `);
+
+            // если создавать svg через синтаксис $(...) - происходит ошибка
+            const svgNS = "http://www.w3.org/2000/svg";
+            const svg = document.createElementNS(svgNS, "svg");
+            svg.setAttribute("width", "24");
+            svg.setAttribute("height", "24");
+            svg.setAttribute("viewBox", "0 0 24 24");
+            svg.setAttribute("fill", "none");
+
+            const path = document.createElementNS(svgNS, "path");
+            path.setAttribute("d", "M3 7L12 17L21 7");
+            path.setAttribute("stroke", "currentColor");
+            path.setAttribute("stroke-width", "2.5");
+            path.setAttribute("stroke-linecap", "round");
+            path.setAttribute("stroke-linejoin", "round");
+
+            svg.appendChild(path);
+
+            $faqItem.find('.faq-icon').append(svg);
+
+            $container.append($faqItem);
+        });
+
+        $('.faq-summary').click(function () {
+            $(this).siblings('.faq-content').slideToggle();
+            $(this).toggleClass('opened')
+        });
+    });
+</script>
